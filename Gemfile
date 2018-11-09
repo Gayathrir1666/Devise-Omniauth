@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby "2.4.0"
+ruby "2.4.1"
 
 git_source(:github) do |repo_name|
   repo_name = "#{repo_name}/#{repo_name}" unless repo_name.include?("/")
@@ -10,8 +10,8 @@ end
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.0.2'
-# Use mysql as the database for Active Record
-gem 'mysql2', '>= 0.3.18', '< 0.5'
+# Use sqlite3 as the database for Active Record
+gem 'sqlite3'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -40,6 +40,10 @@ gem 'jbuilder', '~> 2.5'
 # Use Devise for authentication
 gem 'devise', '~> 4.2'
 # Use Omniauth Facebook plugin
+gem 'railties'
+
+gem 'pg', '~> 0.20'
+
 gem 'omniauth-facebook', '~> 4.0'
 # Use Omniauth Github plugin
 gem 'omniauth-github', '~> 1.1', '>= 1.1.2'

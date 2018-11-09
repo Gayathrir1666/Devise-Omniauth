@@ -10,17 +10,19 @@
 #   http://dev.mysql.com/doc/refman/5.7/en/old-client.html
 #
 default: &default
-  adapter: mysql2
-  encoding: utf8
-  pool: 5
-  socket: /tmp/mysql.sock
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # http://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
 
 development:
   <<: *default
   host: localhost
   database: devise-omniauth-development
-  username: root
-  password: root
+  #username: root
+  #password: root
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
